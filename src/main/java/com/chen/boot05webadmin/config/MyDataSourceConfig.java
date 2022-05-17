@@ -14,8 +14,8 @@ public class MyDataSourceConfig {
     @Bean
     public DataSource dataSource(){
 
-        DruidDataSource druidDataSoruce = new DruidDataSource();
-        return druidDataSoruce;
+        DruidDataSource druidDataSource = new DruidDataSource();
+        return druidDataSource;
     }
 
 }
