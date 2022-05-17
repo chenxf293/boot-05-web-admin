@@ -1,6 +1,7 @@
 package com.chen.boot05webadmin.controller;
 
 import com.chen.boot05webadmin.bean.User;
+import com.chen.boot05webadmin.exception.UserTooManyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +15,7 @@ public class TableController {
 
     @GetMapping("/basic_table")
     public String basic_table(){
-
+        int i = 10 / 0;
         return "table/basic_table";
     }
 
@@ -26,6 +27,10 @@ public class TableController {
                 new User("hha","jasjdalk"),
                 new User("hehe","jsldajl"));
         model.addAttribute("users",users);
+
+        if(users.size()>3){
+            throw new UserTooManyException();
+        }
         return "table/dynamic_table";
     }
 
