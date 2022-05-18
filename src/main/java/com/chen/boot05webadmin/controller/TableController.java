@@ -21,16 +21,17 @@ public class TableController {
 
     @GetMapping("/dynamic_table")
     public String dynamic_table(Model model){
-        //表格内容遍历
-        List<User> users = Arrays.asList(new User("zhangsan","sdhfshdf"),
-                new User("lisi","ahsdkh"),
-                new User("hha","jasjdalk"),
-                new User("hehe","jsldajl"));
-        model.addAttribute("users",users);
-
-        if(users.size()>3){
-            throw new UserTooManyException();
-        }
+//        //表格内容遍历
+//        List<User> users = Arrays.asList(new User("zhangsan","sdhfshdf"),
+//                new User("lisi","ahsdkh"),
+//                new User("hha","jasjdalk"),
+//                new User("hehe","jsldajl"));
+//        model.addAttribute("users",users);
+//
+//        if(users.size()>3){
+//            throw new UserTooManyException();
+//        }
+        //从数据库中查出user表中的用户进行展示
         return "table/dynamic_table";
     }
 
