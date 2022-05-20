@@ -1,8 +1,12 @@
 package com.chen.boot05webadmin;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
+@MapperScan("com.chen.boot05webadmin.mapper")
+@ServletComponentScan(basePackages = "com.chen.boot05webadmin")
 @SpringBootApplication
 public class Boot05WebAdminApplication {
 
